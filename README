@@ -1,0 +1,22 @@
+# This in command after build 
+- extrak file ojs
+`tar -xzvf ojs-2.4.8.tar.gz`
+
+- build container
+`docker build -t ojs .`
+
+- run container
+`docker run -di --privileged=true --hostname ojs --name ojs -p 80:80 --volume /sys/fs/cgroup:/sys/fs/cgroup:ro image /sbin/init`
+
+- login into container
+`docker exec -ti container_name /bin/bash`
+
+- start nginx
+`systemctl start nginx`
+
+- start php
+`systemctl start php72-php-fpm`
+
+- chown php socket
+`chown apache:apache /var/run/www.sock`
+
