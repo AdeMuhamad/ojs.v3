@@ -1,6 +1,6 @@
 # This in command after build 
 - extrak file ojs
-`tar -xzvf ojs-2.4.8.tar.gz`
+`tar -xzvf ojs-3.1.1-2.tar.gz`
 
 - build container
 `docker build -t ojs .`
